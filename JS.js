@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 //This is the javascript page.//
 
 let words = ["Rock", "Paper", "Scissors"];
@@ -36,3 +37,6 @@ function game() {
   }
 }
 console.log(game());
+=======
+//This is the javascript page.
+>>>>>>> b27b4cadacb6399f876eefb6bd9c6a7214f79e5d
