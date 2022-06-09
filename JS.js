@@ -47,5 +47,5 @@ function alertFunction() {
   alert("test");
 }
 
-const btn1 = document.querySelector("rock");
+const btn1 = document.querySelector("#rock");
 btn1.addEventListener("click", alertFunction);
