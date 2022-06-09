@@ -7,6 +7,9 @@ function computerPlay() {
   return random;
 }
 
+let playerScore = 0;
+let computerScore = 0;
+
 function playRound(playerSelection, computerSelection) {
   if (playerSelection === "rock" && computerSelection === "paper") {
     return `You lose! ${computerSelection} beats ${playerSelection}!`;
@@ -25,11 +28,34 @@ function playRound(playerSelection, computerSelection) {
   }
 }
 
+document.querySelector("#playerScore").textContent = playerScore;
+document.querySelector("#computerScore").textContent = computerScore;
+
+const computerSelection = computerPlay();
+
+const buttons = document.querySelectorAll("button");
+buttons.forEach((button) => {
+  button.addEventListener("click", () => {
+    const result = playRound(button.textContent, computerSelection);
+    document.querySelector("#display").textContent = result;
+  });
+});
+
 /*
 let playerSelection = window.prompt("Choose Rock, Paper, or Scissors");
-const computerSelection = computerPlay();
 */
 
+/*
+const btn1 = document.querySelector("#rock");
+btn1.addEventListener("click", playRound);
+
+const btn2 = document.querySelector("#paper");
+btn2.addEventListener("click", playRound);
+
+const btn3 = document.querySelector("#scissors");
+btn3.addEventListener("click", playRound);
+
+*/
 /*
 function game() {
   for (let i = 1; i <= 5; i++) {
@@ -42,10 +68,3 @@ function game() {
 }
 console.log(game());
 */
-
-function alertFunction() {
-  alert("test");
-}
-
-const btn1 = document.querySelector("#rock");
-btn1.addEventListener("click", alertFunction);
