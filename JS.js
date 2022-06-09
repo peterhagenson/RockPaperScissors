@@ -30,6 +30,7 @@ let playerSelection = window.prompt("Choose Rock, Paper, or Scissors");
 const computerSelection = computerPlay();
 */
 
+/*
 function game() {
   for (let i = 1; i <= 5; i++) {
     let playerSelection = window
@@ -40,3 +41,11 @@ function game() {
   }
 }
 console.log(game());
+*/
+
+function alertFunction() {
+  alert("test");
+}
+
+const btn1 = document.querySelector("rock");
+btn1.addEventListener("click", alertFunction);
