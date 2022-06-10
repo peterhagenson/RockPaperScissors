@@ -60,6 +60,11 @@ const computerSelection = computerPlay();
 const buttons = document.querySelectorAll("button");
 buttons.forEach((button) => {
   button.addEventListener("click", () => {
+    const computerSelection = computerPlay();
+    function computerPlay() {
+      const random = words[Math.floor(Math.random() * words.length)];
+      return random;
+    }
     const result = playRound(button.textContent, computerSelection);
     document.querySelector("#display").textContent = result;
   });
