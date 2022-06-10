@@ -18,6 +18,7 @@ function startGame() {
 let ties = 0;
 let playerScore = 0;
 let computerScore = 0;
+let roundWinner = "";
 
 function playRound(playerSelection, computerSelection) {
   if (
@@ -26,23 +27,34 @@ function playRound(playerSelection, computerSelection) {
     (playerSelection === "scissors" && computerSelection === "paper")
   ) {
     playerScore++;
-    console.log("playerScore " + playerScore);
+    roundWinner = "player";
+    document.querySelector(
+      "#playerScore"
+    ).textContent = `Player Score: ${playerScore}`;
     return `You win! ${playerSelection} beats ${computerSelection}!`;
   } else if (playerSelection === computerSelection) {
     ties++;
-    console.log("Ties  " + ties);
+    roundWinner = "tie";
+    document.querySelector("#ties").textContent = `Ties: ${ties}`;
     return "It's a tie!";
   } else {
     computerScore++;
-    console.log("ComputerScore " + computerScore);
+    roundWinner = "computer";
+    document.querySelector(
+      "#computerScore"
+    ).textContent = `Computer Score: ${computerScore}`;
     return `You lose! ${computerSelection} beats ${playerSelection}!`;
   }
 }
-
-document.querySelector("#ties").textContent = ties;
-document.querySelector("#playerScore").textContent = playerScore;
-document.querySelector("#computerScore").textContent = computerScore;
-
+/*
+document.querySelector("#ties").textContent = `Ties: ${newTScore}`;
+document.querySelector(
+  "#playerScore"
+).textContent = `Player Score: ${newPScore}`;
+document.querySelector(
+  "#computerScore"
+).textContent = `Computer Score: ${newCScore}`;
+*/
 const computerSelection = computerPlay();
 
 const buttons = document.querySelectorAll("button");
