@@ -7,10 +7,6 @@ function computerPlay() {
   return random;
 }
 
-function resetGame() {
-  //reset game
-}
-
 function startGame() {
   //play the game until someone wins 5 times
 }
@@ -55,9 +51,10 @@ document.querySelector(
   "#computerScore"
 ).textContent = `Computer Score: ${newCScore}`;
 */
+
 const computerSelection = computerPlay();
 
-const buttons = document.querySelectorAll("button");
+const buttons = document.querySelectorAll("button:not(#reset)");
 buttons.forEach((button) => {
   button.addEventListener("click", () => {
     const computerSelection = computerPlay();
@@ -80,6 +77,13 @@ function declareWinner() {
     endDesc.textContent = "Computer Wins!";
   }
 }
+
+const btnReset = document.querySelector(".reset");
+btnReset.addEventListener("click", function () {
+  playerScore.textContent = 0;
+  computerScore.textContent = 0;
+  ties.textContent = 0;
+});
 
 /*
 let playerSelection = window.prompt("Choose Rock, Paper, or Scissors");
