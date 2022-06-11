@@ -78,11 +78,15 @@ function declareWinner() {
   }
 }
 
-const btnReset = document.querySelector(".reset");
+const btnReset = document.querySelector("#reset");
 btnReset.addEventListener("click", function () {
-  playerScore.textContent = 0;
-  computerScore.textContent = 0;
-  ties.textContent = 0;
+  document.querySelector("#playerScore").textContent = "Player Score: " + 0;
+  document.querySelector("#computerScore").textContent = "Computer Score: " + 0;
+  document.querySelector("#ties").textContent = "Ties: " + 0;
+  document.querySelector("#display").textContent = "";
+  ties = 0;
+  playerScore = 0;
+  computerScore = 0;
 });
 
 /*
