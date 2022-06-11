@@ -67,8 +67,19 @@ buttons.forEach((button) => {
     }
     const result = playRound(button.textContent, computerSelection);
     document.querySelector("#display").textContent = result;
+    if (playerScore === 5 || computerScore === 5) {
+      declareWinner();
+    }
   });
 });
+
+function declareWinner() {
+  if (playerScore > computerScore) {
+    endDesc.textContent = "Player Wins!";
+  } else {
+    endDesc.textContent = "Computer Wins!";
+  }
+}
 
 /*
 let playerSelection = window.prompt("Choose Rock, Paper, or Scissors");
