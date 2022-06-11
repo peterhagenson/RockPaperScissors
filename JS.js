@@ -63,6 +63,7 @@ buttons.forEach((button) => {
       return random;
     }
     const result = playRound(button.textContent, computerSelection);
+
     document.querySelector("#display").textContent = result;
     if (playerScore === 5 || computerScore === 5) {
       declareWinner();
@@ -84,6 +85,7 @@ btnReset.addEventListener("click", function () {
   document.querySelector("#computerScore").textContent = "Computer Score: " + 0;
   document.querySelector("#ties").textContent = "Ties: " + 0;
   document.querySelector("#display").textContent = "";
+  document.querySelector("#endDesc").textContent = "";
   ties = 0;
   playerScore = 0;
   computerScore = 0;
